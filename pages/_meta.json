@@ -5,6 +5,8 @@
   "statistics": "Statistics",
   "genre": "Genre",
   "playlist": "Playlist",
+  "artist": "Artist",
+  "album": "Album",
   "song": "Song",
   "blog": {
     "title": "Blog",

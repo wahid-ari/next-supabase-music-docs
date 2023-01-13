@@ -1,25 +1,23 @@
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
 
-# Create Song
+# Update Album
 
-To create the data in the specified collection with the specified parameters.
+To edit the data in the specified collection with the specified parameters.
 When a JSON object is saved, the object properties are automatically added to the collection you specified.
 
-**Method :** <Badge>POST</Badge>
+**Method :** <Badge variant="info">PUT</Badge>
 
-**URL :** <Badge variant="dark">/api/song</Badge>
+**URL :** <Badge variant="dark">/api/album</Badge>
 
 **Body :** <Badge variant="purple">JSON</Badge>
 
 ```json
 {
-  "name": "New Song",
-  "artist_id": 1,
-  "album_id": 2,
+  "id": 1,
+  "name": "Edited Album",
   "cover_url": "https://i.scdn.co/image/ab67616d00001e02af69d9e82cc973f608481610",
-  "preview_url": "https://p.scdn.co/mp3-preview/c6e19c3e7e0af8cf26f54b41468b1b0121166f11",
-  "youtube_url": "sEM01iNOSQA"
+  "artist_id": 1
 }
 ```
 
@@ -27,7 +25,7 @@ When a JSON object is saved, the object properties are automatically added to th
 
 ```json
 {
-  "message": "Success add song"
+  "message": "Success update album"
 }
 ```
 
@@ -35,13 +33,14 @@ When a JSON object is saved, the object properties are automatically added to th
 
 ```json
 {
-  {
-    "error": "Name required"
-  },
-  {
-    "error": "Artist required"
-  }
+  "error": "Name required"
 }
+```
+
+**Response :** <BadgeOutline variant="warning">404 - Not Found</BadgeOutline>
+
+```json
+Not Found
 ```
 
 **Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>

@@ -1,20 +1,23 @@
-import Badge from '@components/Badge'
-import BadgeOutline from '@components/BadgeOutline'
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
 
-# Update Post (JSON)
+# Update Artist
 
 To edit the data in the specified collection with the specified parameters.
 When a JSON object is saved, the object properties are automatically added to the collection you specified.
 
-**Method :** <Badge>POST</Badge>
+**Method :** <Badge variant="info">PUT</Badge>
 
-**URL :** <Badge variant="dark">/url/(id)</Badge>
+**URL :** <Badge variant="dark">/api/artist</Badge>
 
 **Body :** <Badge variant="purple">JSON</Badge>
 
 ```json
 {
-  "title": "title"
+  "id": 1,
+  "name": "Edited Artist",
+  "cover_url": "https://i.scdn.co/image/ab67616d00001e02af69d9e82cc973f608481610",
+  "genre_id": 1
 }
 ```
 
@@ -22,8 +25,7 @@ When a JSON object is saved, the object properties are automatically added to th
 
 ```json
 {
-  "message": "success edit data",
-  "status": 200
+  "message": "Success update artist"
 }
 ```
 
@@ -31,9 +33,7 @@ When a JSON object is saved, the object properties are automatically added to th
 
 ```json
 {
-  "error": {
-    "title": ["title can't be empty"]
-  }
+  "error": "Name required"
 }
 ```
 

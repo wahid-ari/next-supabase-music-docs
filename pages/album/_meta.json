@@ -1,0 +1,11 @@
+{
+  "list": "Get All Album",
+  "detail": "Get Detail Album",
+  "create": "Create Album",
+  "edit": "Update Album",
+  "delete": "Delete Album",
+  "---": {
+    "type": "separator"
+  },
+  "delete-song": "Delete Album Song"
+}

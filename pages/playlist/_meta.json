@@ -4,6 +4,9 @@
   "create": "Create Playlist",
   "edit": "Update Playlist",
   "delete": "Delete Playlist",
+  "---": {
+    "type": "separator"
+  },
   "add-song": "Add Playlist Song",
   "delete-song": "Delete Playlist Song"
 }

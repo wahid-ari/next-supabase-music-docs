@@ -1,0 +1,7 @@
+{
+  "list": "Get All Artist",
+  "detail": "Get Detail Artist",
+  "create": "Create Artist",
+  "edit": "Update Artist",
+  "delete": "Delete Artist"
+}

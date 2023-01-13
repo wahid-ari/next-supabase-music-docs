@@ -1,21 +1,22 @@
-import Badge from '@components/Badge'
-import BadgeOutline from '@components/BadgeOutline'
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
 
-# Create
+# Create Album
 
 To create the data in the specified collection with the specified parameters.
 When a JSON object is saved, the object properties are automatically added to the collection you specified.
 
 **Method :** <Badge>POST</Badge>
 
-**URL :** <Badge variant="dark">/url</Badge>
+**URL :** <Badge variant="dark">/api/album</Badge>
 
 **Body :** <Badge variant="purple">JSON</Badge>
 
 ```json
 {
-  "title": "title",
-  "description": "description",
+  "name": "New Album",
+  "cover_url": "https://i.scdn.co/image/ab67616d00001e02af69d9e82cc973f608481610",
+  "artist_id": 1
 }
 ```
 
@@ -23,8 +24,7 @@ When a JSON object is saved, the object properties are automatically added to th
 
 ```json
 {
-  "message": "success add data",
-  "status": 200
+  "message": "Success add album"
 }
 ```
 
@@ -32,9 +32,11 @@ When a JSON object is saved, the object properties are automatically added to th
 
 ```json
 {
-  "error": {
-    "title": ["title can't be empty"],
-    "description": ["description can't be empty"]
+  {
+    "error": "Name required"
+  },
+  {
+    "error": "Artist required"
   }
 }
 ```
