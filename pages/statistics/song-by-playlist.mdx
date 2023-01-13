@@ -1,0 +1,50 @@
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+
+# Total Song by Playlist
+
+To get the data in the specified collection. If no parameters are passed, it lists all of them.
+Otherwise, it lists the documents in the collection matching the specified parameters:
+
+**Method :** <Badge variant="success">GET</Badge>
+
+**URL :** <Badge variant="dark">/api/statistics/song-by-playlist</Badge>
+
+**Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
+
+```json
+[
+  {
+    "id": 1,
+    "label": "Noah Top 10 ",
+    "total": 10
+  },
+  {
+    "id": 2,
+    "label": "Coldplay Top 10",
+    "total": 10
+  },
+  {
+    "id": 3,
+    "label": "Guns n Roses Top 5",
+    "total": 5
+  },
+  {
+    "id": 4,
+    "label": "Kshmr Top 5",
+    "total": 5
+  }
+]
+```
+
+**Response :** <BadgeOutline variant="warning">404 - Not Found</BadgeOutline>
+
+```json
+Not Found
+```
+
+**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
+
+```json
+Internal Server Error
+```

@@ -1,0 +1,41 @@
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+
+# Create Genre
+
+To create the data in the specified collection with the specified parameters.
+When a JSON object is saved, the object properties are automatically added to the collection you specified.
+
+**Method :** <Badge>POST</Badge>
+
+**URL :** <Badge variant="dark">/api/genre</Badge>
+
+**Body :** <Badge variant="purple">JSON</Badge>
+
+```json
+{
+  "name": "New Genre"
+}
+```
+
+**Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
+
+```json
+{
+  "message": "Success add genre"
+}
+```
+
+**Response :** <BadgeOutline variant="info">422 - Unprocessable Content</BadgeOutline>
+
+```json
+{ 
+  "error": "Name required"
+}
+```
+
+**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
+
+```json
+Internal Server Error
+```

@@ -1,0 +1,80 @@
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+
+# Total Song by Album
+
+To get the data in the specified collection. If no parameters are passed, it lists all of them.
+Otherwise, it lists the documents in the collection matching the specified parameters:
+
+**Method :** <Badge variant="success">GET</Badge>
+
+**URL :** <Badge variant="dark">/api/statistics/song-by-album</Badge>
+
+**Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
+
+```json
+[
+  {
+    "id": 3,
+    "label": "Taman Langit",
+    "total": 11
+  },
+  {
+    "id": 1,
+    "label": "Bintang di Surga",
+    "total": 8
+  },
+  {
+    "id": 2,
+    "label": "Hari yang Cerah",
+    "total": 7
+  },
+  {
+    "id": 4,
+    "label": "Seperti Seharusnya",
+    "total": 7
+  },
+  {
+    "id": 15,
+    "label": "Second Chance",
+    "total": 7
+  },
+  {
+    "id": 17,
+    "label": "Best of Kshmr",
+    "total": 7
+  },
+  {
+    "id": 9,
+    "label": "A Head Full of Dreams",
+    "total": 6
+  },
+  {
+    "id": 5,
+    "label": "Keterkaitan Keterikatan",
+    "total": 5
+  },
+  {
+    "id": 6,
+    "label": "Appetite for Destruction",
+    "total": 5
+  },
+  {
+    "id": 16,
+    "label": "Use Your Illusion II",
+    "total": 5
+  }
+]
+```
+
+**Response :** <BadgeOutline variant="warning">404 - Not Found</BadgeOutline>
+
+```json
+Not Found
+```
+
+**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
+
+```json
+Internal Server Error
+```

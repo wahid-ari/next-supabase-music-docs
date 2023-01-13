@@ -1,0 +1,70 @@
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+
+# Get All Playlist
+
+To get the data in the specified collection. If no parameters are passed, it lists all of them.
+Otherwise, it lists the documents in the collection matching the specified parameters:
+
+**Method :** <Badge variant="success">GET</Badge>
+
+**URL :** <Badge variant="dark">/api/playlist</Badge>
+
+**Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
+
+```json
+[
+  {
+    "id": 1,
+    "user_id": null,
+    "name": "Noah Top 10 ",
+    "created_at": "2023-01-04T05:56:57.40715+00:00",
+    "playlist_song": [
+      {
+        "id": 19,
+        "playlist_id": 1,
+        "song_id": 2,
+        "created_at": "2023-01-04T08:57:27.606081+00:00"
+      },
+      {
+        "id": 20,
+        "playlist_id": 1,
+        "song_id": 18,
+        "created_at": "2023-01-04T08:57:34.454451+00:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user_id": null,
+    "name": "Coldplay Top 10",
+    "created_at": "2023-01-04T08:53:53.400617+00:00",
+    "playlist_song": [
+      {
+        "id": 9,
+        "playlist_id": 2,
+        "song_id": 11,
+        "created_at": "2023-01-04T08:55:23.386741+00:00"
+      },
+      {
+        "id": 10,
+        "playlist_id": 2,
+        "song_id": 12,
+        "created_at": "2023-01-04T08:55:29.272348+00:00"
+      }
+    ]
+  }
+]
+```
+
+**Response :** <BadgeOutline variant="warning">404 - Not Found</BadgeOutline>
+
+```json
+Not Found
+```
+
+**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
+
+```json
+Internal Server Error
+```

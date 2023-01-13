@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 1) 500px
+		),
+		fixed 0 0 / 20px 20px radial-gradient(#d1d1d1 1px, transparent 0),
+		fixed 10px 10px / 20px 20px radial-gradient(#d1d1d1 1px, transparent 0);
+}
+
+.dark body {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #111 500px),
+		fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+}
+
+hr {
+	@apply border-neutral-200 dark:border-neutral-800 !important;
+}
+
+/* Separator */
+/* https://nextra.site/docs/docs-theme/theme-configuration#customize-sidebar-content */
+/* https://nextra.site/docs/docs-theme/page-configuration#separators */
+li.nx-mt-5 {
+	@apply !my-1;
+}
+
+div.nextra-search {
+	@apply md:w-48;
+}
+
+footer > div.nx-py-12 {
+	@apply py-8;
+}
+
+/* Sidemenu */
+aside > div > ul > li:not(.active) > a {
+	@apply dark:text-neutral-400;
+}
+
+/* Sidemenu item*/
+aside > div > ul > li > div.nx-transform-gpu > div.nx-transform-gpu > ul > li:not(.active) > a {
+	@apply dark:text-neutral-400;
+}
+
+/* Menu item mobile*/
+li.open > div.nx-transform-gpu > div.nx-transform-gpu > ul > li:not(.active) > a {
+	@apply dark:text-neutral-400;
+}
+
+/* Request Response code */
+div.req-res > div.rounded-b-xl > div > div > pre {
+	@apply rounded-t-none;
+}
+
+/* Code block filename  */
+div[data-rehype-pretty-code-fragment] > div {
+	@apply font-medium text-[13px];
+}
+
+/* Pagination  */
+a.nx-flex.nx-items-center.nx-gap-1.nx-py-4.nx-text-base.nx-font-medium.nx-text-gray-600.nx-transition-colors {
+	@apply text-base;
+}
+
+svg.nx-inline.nx-h-5.nx-shrink-0.ltr\:nx-rotate-180 {
+	@apply h-4 w-4;
+}
+
+svg.nx-inline.nx-h-5.nx-shrink-0.rtl\:nx-rotate-180 {
+	@apply h-4 w-4;
+}
+
+.steps-container {
+	margin-left: 1rem;
+	padding-left: 1.5rem;
+	counter-reset: step;
+	border-left: 1px solid;
+	border-color: rgb(229 231 235/1);
+	margin-bottom: 3rem;
+}
+.steps-container h3 {
+	counter-increment: step;
+}
+.steps-container h3:before {
+	content: counter(step);
+	display: inline-block;
+	position: absolute;
+	margin-top: 3px;
+	margin-left: -41px;
+	width: 33px;
+	height: 33px;
+	text-align: center;
+	text-indent: -1px;
+	color: rgb(58, 58, 58);
+	border-radius: 100%;
+	border: 4px solid #fff;
+	background: #ececec;
+	line-height: 1.5rem;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.dark .steps-container {
+	border-color: #2e2e2e;
+}
+.dark .steps-container h3:before {
+	color: #999;
+	border: 4px solid rgba(17, 17, 17, var(--tw-bg-opacity));
+	background: #2e2e2e;
+}

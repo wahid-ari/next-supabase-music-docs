@@ -1,0 +1,7 @@
+{
+  "list": "Get All Genre",
+  "detail": "Get Detail Genre",
+  "create": "Create Genre",
+  "edit": "Update Genre",
+  "delete": "Delete Genre"
+}

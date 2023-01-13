@@ -1,0 +1,7 @@
+{
+  "list": "Get All Song",
+  "detail": "Get Detail Song",
+  "create": "Create Song",
+  "edit": "Update Song",
+  "delete": "Delete Song"
+}

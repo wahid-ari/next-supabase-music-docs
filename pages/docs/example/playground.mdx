@@ -1,0 +1,207 @@
+import ApiPlayground from "@components/ApiPlayground";
+import CodeGroup from "@components/CodeGroup";
+import Alert from "@components/Alert";
+import { MethodTable } from '@components/OptionTable';
+
+#  API Playground 
+
+Enable users interact with your API
+
+## Introduction
+
+The API playground lets you create an interactive environment to make requests and preview your API endpoints.
+
+## GET
+
+<ApiPlayground method="GET" endpoint="hello" param={true} paramName="message">
+	Tes GET endpoint `hello` with `message` as param
+</ApiPlayground>
+
+<ApiPlayground method="GET" endpoint="users/1">
+	Tes GET endpoint `users/1` that will return user data with `id 1`
+</ApiPlayground>
+
+<ApiPlayground method="GET" endpoint="users" param={true} paramName="id">
+	Tes GET endpoint `users` with `id` as param. If no `id` was specified it will return **all users data**
+</ApiPlayground>
+
+## POST
+
+<ApiPlayground method="POST" endpoint="users">
+	Tes POST to endpoint `users`
+</ApiPlayground>
+
+## PUT
+
+<ApiPlayground method="PUT" endpoint="users">
+	Tes PUT to endpoint `users`
+</ApiPlayground>
+
+## PATCH
+
+<ApiPlayground method="PATCH" endpoint="users">
+	Tes PATCH to endpoint `users`
+</ApiPlayground>
+
+## DELETE
+
+<ApiPlayground method="DELETE" endpoint="users/1">
+	Tes DELETE to endpoint `users`
+</ApiPlayground>
+
+## Request / Response
+
+### Request
+
+<CodeGroup items={["Shell", "Javascript", "Python"]}>
+	<CodeGroup.Item>
+	```shell copy
+	curl --request GET \
+		--url https://api.vessel.land/connection/crm/integrations \
+		--header 'Content-Type: application/json'
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```jsx copy
+	fetch('https://api.vessel.land/connection/crm/integrations', {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	})
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((err) => {
+		console.error(err);
+	});
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```python copy
+	import http.client
+
+	conn = http.client.HTTPSConnection("api.vessel.land")
+
+	headers = { 'Content-Type': "application/json" }
+
+	conn.request("GET", "/connection/crm/integrations", headers=headers)
+
+	res = conn.getresponse()
+	data = res.read()
+
+	print(data.decode("utf-8"))
+	```
+	</CodeGroup.Item>
+</CodeGroup>
+
+### Response 
+
+<CodeGroup items={["Success", "Error"]}>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"id": "573de1b49555e84fccd76c47f8bac0a2",
+		"nativeId": "23",
+		"firstName": "Tom",
+		"lastName": "Smith",
+		"jobTitle": "Director of Operations",
+		"email": "tom@bluecross.com",
+		"account": "Blue Cross",
+		"phone": "1234445555",
+		"associations": {
+			"contactIds": [
+				"3e530bfc11fdb21bbc8d28dd6dde491a"
+			]
+		},
+		"additional": {}
+  }
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"message": "Missing API token in header key \"vessel-api-token\""
+	}
+	```
+	</CodeGroup.Item>
+</CodeGroup>
+
+<CodeGroup items={["200", "400", "401", "402", "403", "500"]}>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"id": "72be9d5c-f7c7-4d53-bafc-8846232ee02b",
+		"utility": {
+			"id": 1,
+			"full_name": "Pacific Gas & Electricity"
+		},
+		"utility_username": "user@pelm.com",
+		"credentials_valid": true
+  }
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"error_code": "parameter_invalid",
+		"message": "User with id does not exist"
+	}
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"error_code": "token_invalid",
+		"message": "Must provide access token"
+	}
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"error_code": "quota_reached",
+		"message": "You have reach your plan's quota for this billing period. Please email info@pelm.com to upgrade your plan."
+	}
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"error_code": "permission_denied",
+		"message": "Permission denied."
+	}
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json copy
+	{
+		"error_code": "internal_error",
+		"message": "Something went wrong. Please try again."
+	}
+	```
+	</CodeGroup.Item>
+</CodeGroup>
+
+## Method
+
+Can be any one of the following REST API methods
+
+<MethodTable options={[
+  ['GET', 'Retrieve information about the REST API resource'],
+  ['POST', 'Create a REST API resource'],
+  ['PUT', 'Update a REST API resource'],
+  ['PATCH', 'Update a REST API resource'],
+  ['DELETE', 'Delete a REST API resource or related component'],
+]}/>
+
+## Endpoint
+The endpoint should point to the API that the playground should call. For example, it can be something like
+
+```markdown
+https://api.example.com/v1/endpoint
+```
+
+<Alert variant="success">
+If you have baseUrl configured in **next.config.js**, you can use relative paths like **\{baseUrl\}/v1/endpoint**.
+</Alert>

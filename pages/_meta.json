@@ -1,0 +1,41 @@
+{
+  "index": "Introduction",
+  "login": "Login",
+  "search": "Search",
+  "statistics": "Statistics",
+  "genre": "Genre",
+  "playlist": "Playlist",
+  "song": "Song",
+  "blog": {
+    "title": "Blog",
+    "type": "page",
+    "theme": {
+      "sidebar": false
+    }
+  },
+  "about": {
+    "title": "About",
+    "type": "page",
+    "display": "hidden"
+  },
+  "company": {
+    "title": "Company",
+    "type": "menu",
+    "items": {
+      "about": {
+        "title": "About",
+        "href": "/about"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "href": "mailto:hi@example.com"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com",
+    "newWindow": true
+  }
+}

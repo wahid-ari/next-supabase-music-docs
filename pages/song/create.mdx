@@ -1,0 +1,54 @@
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+
+# Create Song
+
+To create the data in the specified collection with the specified parameters.
+When a JSON object is saved, the object properties are automatically added to the collection you specified.
+
+**Method :** <Badge>POST</Badge>
+
+**URL :** <Badge variant="dark">/api/song</Badge>
+
+**Body :** <Badge variant="purple">JSON</Badge>
+
+```json
+{
+	"name": "",
+	"album_id": "",
+	"youtube_url": "",
+	"preview_url": "",
+	"cover_url": "",
+	"artist_id": ""
+}
+```
+
+**Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
+
+```json
+{
+	"id": 1,
+	"username": "admin",
+	"name": "Admin",
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJBZG1pbiIsImlhdCI6MTY3MzU5MDY1NH0.z8Bc26vhWGICs78KyujSWXY5S98qoccYl9pBVWEFYBY"
+}
+```
+
+**Response :** <BadgeOutline variant="info">422 - Unprocessable Content</BadgeOutline>
+
+```json
+{
+  {
+    "error": "Name required"
+  },
+  {
+    "error": "Artist required"
+  }
+}
+```
+
+**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
+
+```json
+Internal Server Error
+```
