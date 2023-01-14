@@ -13,10 +13,8 @@ export default function Param({ name, type, defaultValue, required = false, opti
             <span
               className={cn(
                 "px-1 py-px rounded-md font-semibold bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700",
+                "text-green-500 dark:text-green-400",
                 nameClasses,
-                (nameClasses && !nameClasses.includes("text-")) || !nameClasses
-                  ? "dark:text-neutral-200"
-                  : undefined
               )}
             >
               {name}

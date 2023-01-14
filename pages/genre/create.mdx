@@ -1,5 +1,6 @@
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
+import Param from "@components/Param";
 
 # Create Genre
 
@@ -17,6 +18,8 @@ When a JSON object is saved, the object properties are automatically added to th
   "name": "New Genre"
 }
 ```
+
+<Param name="name" type="string" required={true}>Name of Genre.</Param>
 
 **Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
 

@@ -1,5 +1,6 @@
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
+import Param from "@components/Param";
 
 # Add Song to Playlist
 
@@ -18,6 +19,9 @@ When a JSON object is saved, the object properties are automatically added to th
   "id_playlist": 7
 }
 ```
+
+<Param name="id_song" type="number" required={true}>Id of Song.</Param>
+<Param name="id_playlist" type="number" required={true}>Id of Playlist.</Param>
 
 **Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
 

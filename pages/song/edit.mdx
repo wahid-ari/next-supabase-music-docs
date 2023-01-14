@@ -1,5 +1,7 @@
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
+import Expandable from "@components/Expandable";
+import Param from "@components/Param";
 
 # Update Song
 
@@ -22,6 +24,15 @@ When a JSON object is saved, the object properties are automatically added to th
   "youtube_url": "sEM01iNOSQA"
 }
 ```
+
+<Expandable title="properties">
+  <Param name="name" type="string" required={true}>Name of Song.</Param>
+  <Param name="artist_id" type="number" required={true}>Id of Artist.</Param>
+  <Param name="album_id" type="number" optional>Id of Album.</Param>
+  <Param name="cover_url" type="string" optional>Song Cover Image URL.</Param>
+  <Param name="preview_url" type="string" optional>Song MP3 Preview URL.</Param>
+  <Param name="youtube_url" type="string" optional>Song Youtube URL.</Param>
+</Expandable>
 
 **Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
 

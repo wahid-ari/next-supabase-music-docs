@@ -1,5 +1,6 @@
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
+import Param from "@components/Param";
 
 # Update Album
 
@@ -20,6 +21,11 @@ When a JSON object is saved, the object properties are automatically added to th
   "artist_id": 1
 }
 ```
+
+<Param name="id" type="string" required={true}>Id of Album.</Param>
+<Param name="name" type="string" required={true}>Name of Album.</Param>
+<Param name="cover_url" type="string" optional>Album Cover Image URL.</Param>
+<Param name="artist_id" type="number" required={true}>Id of Artist.</Param>
 
 **Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
 
