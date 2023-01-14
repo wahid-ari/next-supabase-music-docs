@@ -1,6 +1,7 @@
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
 import ApiPlayground from "@components/ApiPlayground";
+import CodeGroup from "@components/CodeGroup";
 
 # Search
 
@@ -16,6 +17,37 @@ Otherwise, it lists the documents in the collection matching the specified param
 **Method :** <Badge variant="success">GET</Badge>
 
 **URL :** <Badge variant="dark">/api/search?q=noah</Badge>
+
+**Request :**
+
+<CodeGroup items={["Javascript", "Python"]}>
+	<CodeGroup.Item>
+	```jsx copy
+	var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+  };
+
+  fetch("http://localhost:3000/api/search?q=noah", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```python copy
+  import http.client
+
+  conn = http.client.HTTPSConnection("localhost", 3000)
+  payload = ''
+  headers = {}
+  conn.request("GET", "/api/search?q=noah", payload, headers)
+  res = conn.getresponse()
+  data = res.read()
+  print(data.decode("utf-8"))
+	```
+	</CodeGroup.Item>
+</CodeGroup>
 
 **Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
 
@@ -52,6 +84,37 @@ Otherwise, it lists the documents in the collection matching the specified param
 ```
 
 **URL :** <Badge variant="dark">/api/search?q=bintang</Badge>
+
+**Request :**
+
+<CodeGroup items={["Javascript", "Python"]}>
+	<CodeGroup.Item>
+	```jsx copy
+	var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+  };
+
+  fetch("http://localhost:3000/api/search?q=bintang", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```python copy
+  import http.client
+
+  conn = http.client.HTTPSConnection("localhost", 3000)
+  payload = ''
+  headers = {}
+  conn.request("GET", "/api/search?q=bintang", payload, headers)
+  res = conn.getresponse()
+  data = res.read()
+  print(data.decode("utf-8"))
+	```
+	</CodeGroup.Item>
+</CodeGroup>
 
 **Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
 
@@ -97,19 +160,27 @@ Otherwise, it lists the documents in the collection matching the specified param
 }
 ```
 
-**Response :** <BadgeOutline variant="warning">404 - Not Found</BadgeOutline>
+**Response :** 
 
-```json
-{
-  "songs": [],
-  "albums": [],
-  "artists": [],
-  "playlists": []
-}
-```
-
-**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
-
-```json
-Internal Server Error
-```
+<CodeGroup items={["404", "500"]}>
+	<CodeGroup.Item>
+	```json
+	{
+        "error_code": "404",
+        "message": "Not Found",
+        "songs": [],
+        "albums": [],
+        "artists": [],
+        "playlists": []
+	}
+	```
+	</CodeGroup.Item>
+	<CodeGroup.Item>
+	```json
+	{
+		"error_code": "500",
+		"message": "Internal Server Error"
+	}
+	```
+	</CodeGroup.Item>
+</CodeGroup>
