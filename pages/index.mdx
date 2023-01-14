@@ -1,4 +1,91 @@
-<br/>
+import { Card, Cards } from "@components/cards";
+import {
+  XIcon,
+  LogoutIcon,
+  ViewGridIcon,
+  CogIcon,
+  TemplateIcon,
+  RectangleStackIcon,
+  UserGroupIcon,
+  MusicalNoteIcon,
+  SwatchIcon,
+  BookmarkIcon,
+  ChartPieIcon,
+  SearchIcon,
+  LoginIcon,
+  MagnifyingGlassIcon,
+  ArrowRightOnRectangleIcon
+} from "@heroicons/react/24/outline";
+
 # Introduction
  
 Welcome to MyMusic REST API documentation. From here you can easily discover all available REST APIs with the required information on how to consume it.
+
+## What is MyMusic?
+
+![Image External](../public/demo.png)
+
+With MyMusic, it&apos;s easy to find the right music for every moment - on your phone, your computer, your tablet and more.
+
+## Documentation
+
+Discover our REST API documentation
+
+<Cards>
+	<Card
+		icon={
+			<ChartPieIcon className="w-6 h-6" />
+		}
+		title="Statistics"
+		href="/statistics/artist-by-genre"
+	/>
+	<Card
+		icon={
+			<BookmarkIcon className="w-6 h-6" />
+		}
+		title="Playlist"
+		href="/playlist/list"
+	/>
+	<Card
+		icon={
+			<MusicalNoteIcon className="w-6 h-6" />
+		}
+		title="Song"
+		href="/song/list"
+	/>
+	<Card
+		icon={
+			<SwatchIcon className="w-6 h-6" />
+		}
+		title="Genre"
+		href="/genre/list"
+	/>
+	<Card
+		icon={
+			<RectangleStackIcon className="w-6 h-6" />
+		}
+		title="Album"
+		href="/album/list"
+	/>
+	<Card
+		icon={
+			<UserGroupIcon className="w-6 h-6" />
+		}
+		title="Artist"
+		href="/artist/list"
+	/>
+	<Card
+		icon={
+			<MagnifyingGlassIcon className="w-6 h-6" />
+		}
+		title="Search"
+		href="/search"
+	/>
+	<Card
+		icon={
+			<ArrowRightOnRectangleIcon className="w-6 h-6" />
+		}
+		title="Login"
+		href="/login"
+	/>
+</Cards>

@@ -8,6 +8,7 @@
   "artist": "Artist",
   "album": "Album",
   "song": "Song",
+  "updates": "Updates",
   "blog": {
     "title": "Blog",
     "type": "page",
