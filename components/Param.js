@@ -20,9 +20,12 @@ export default function Param({ name, type, defaultValue, required = false, opti
               {name}
             </span>
             {required && (
-              <span className="text-neutral-500 dark:text-neutral-300">
-                Required
-              </span>
+              <>
+                <span className="text-neutral-500 dark:text-neutral-300">
+                  Required
+                </span>
+                <span class="text-base font-semibold text-red-500">*</span>
+              </>
             )}
             {optional && (
               <span className="text-neutral-500 dark:text-neutral-300">
