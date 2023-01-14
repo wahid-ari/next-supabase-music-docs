@@ -41,7 +41,7 @@ const config = {
     const { route } = useRouter()
     if (route !== '/') {
       return {
-        titleTemplate: '%s – MyMusic'
+        titleTemplate: '%s – MyMusic Docs'
       }
     }
   },

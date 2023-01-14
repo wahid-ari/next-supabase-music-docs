@@ -31,14 +31,14 @@
       },
       "contact": {
         "title": "Contact Us",
-        "href": "mailto:hi@example.com"
+        "href": "mailto:wahiid.ari@gmail.com"
       }
     }
   },
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com",
+    "href": "https://github.com/wahidari",
     "newWindow": true
   }
 }

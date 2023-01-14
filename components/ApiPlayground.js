@@ -39,7 +39,7 @@ function MethodBadge(method) {
   )
 }
 
-export default function ApiPlayground({ method, endpoint, children, param = false, paramName = "Param" }) {
+export default function ApiPlayground({ method, endpoint, children, param = false, paramName = "" }) {
   const [fetched, setFetched] = useState(false)
   const [data, setData] = useState()
   const [loading, setLoading] = useState(false)
@@ -50,7 +50,7 @@ export default function ApiPlayground({ method, endpoint, children, param = fals
     setLoading(true)
     setFetched(false)
     try {
-      const res = await axios.get(`${process.env.API_URL}/api/${endpoint}`, { params: { [paramName]: value } })
+      const res = await axios.get(`${process.env.API_URL}/api/${endpoint}`, paramName && { params: { [paramName]: value } })
       setData(res.data)
     } catch (error) {
       setData(error.response?.data)
