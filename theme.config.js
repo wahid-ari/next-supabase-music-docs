@@ -1,6 +1,5 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import logo from "@public/logo.png";
 import Image from "next/image";
 
 const Logo = ({ height }) => (
@@ -21,7 +20,7 @@ const config = {
           title='MyMusic Docs'
           style={{ whiteSpace: 'nowrap' }}
         >
-          MyMusic Docs
+          MyMusic API Docs
         </span>
         {/* )} */}
       </>
@@ -41,7 +40,7 @@ const config = {
     const { route } = useRouter()
     if (route !== '/') {
       return {
-        titleTemplate: '%s – MyMusic Docs'
+        titleTemplate: '%s – MyMusic API Docs'
       }
     }
   },
