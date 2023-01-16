@@ -1,0 +1,5 @@
+id,created_at,name,cover_url,genre_id
+1,2022-07-06 10:43:42+00,Noah,https://i.scdn.co/image/ab6761610000e5eba8fe25ec607f3cca02f5db6c,1
+2,2022-07-06 10:43:59+00,Guns n Roses,https://i.scdn.co/image/ab67616d0000b2734e04404c40be7b80855656a8,2
+3,2022-07-06 14:43:34+00,Coldplay,https://i.scdn.co/image/ab67616d00001e02b151437d4adc97ce6c828d4a,3
+4,2023-01-04 10:08:02.813613+00,Kshmr,https://i.scdn.co/image/ab6761610000e5ebd1db941d6e307ab229651fae,4
