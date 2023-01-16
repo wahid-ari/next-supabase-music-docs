@@ -2,19 +2,20 @@ import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
 import CodeGroup from "@components/CodeGroup";
 
-# Login
+# Register
 
-Registered users can login using the API described below. The login operation requires two properties: one marked as user identity and the second is password.
+Users can register using the API described below. The register operation requires three properties: one marked as name, username and password.
 
 **Method :** <Badge>POST</Badge>
 
-**URL :** <Badge variant="dark">/api/login</Badge>
+**URL :** <Badge variant="dark">/api/register</Badge>
 
 **Body :** <Badge variant="purple">JSON</Badge>
 
 ```json
 {
-	"username": "username",
+	"name": "User",
+	"username": "user",
 	"password": "password"
 }
 ```
@@ -28,7 +29,8 @@ Registered users can login using the API described below. The login operation re
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-      "username": "username",
+      "name": "User",
+      "username": "user",
       "password": "password"
   });
 
@@ -39,7 +41,7 @@ Registered users can login using the API described below. The login operation re
       redirect: 'follow'
   };
 
-  fetch("http://localhost:3000/api/login", requestOptions)
+  fetch("http://localhost:3000/api/register", requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -52,13 +54,14 @@ Registered users can login using the API described below. The login operation re
 
   conn = http.client.HTTPSConnection("localhost", 3000)
   payload = json.dumps({
-      "username": "username",
+      "name": "User",
+      "username": "user",
       "password": "password"
   })
   headers = {
       'Content-Type': 'application/json'
   }
-  conn.request("POST", "/api/login", payload, headers)
+  conn.request("POST", "/api/register", payload, headers)
   res = conn.getresponse()
   data = res.read()
   print(data.decode("utf-8"))
@@ -71,9 +74,9 @@ Registered users can login using the API described below. The login operation re
 ```json
 {
 	"id": 1,
-	"username": "admin",
-	"name": "Admin",
-    "type": "admin",
+	"username": "user",
+	"name": "User",
+	"type": "user",
 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJBZG1pbiIsImlhdCI6MTY3MzU5MDY1NH0.z8Bc26vhWGICs78KyujSWXY5S98qoccYl9pBVWEFYBY"
 }
 ```
@@ -86,6 +89,7 @@ Registered users can login using the API described below. The login operation re
 	{
         "error_code": "422",
         "message": "Unprocessable Content",
+        "error": "Name required",
         "error": "Username required",
         "error": "Password required"
 	}
