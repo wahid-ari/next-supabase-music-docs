@@ -1,0 +1,12 @@
+{
+  "list": "Get All Playlist User",
+  "detail": "Get Detail Playlist User",
+  "create": "Create Playlist User",
+  "edit": "Update Playlist User",
+  "delete": "Delete Playlist User",
+  "---": {
+    "type": "separator"
+  },
+  "add-song": "Add Playlist User Song",
+  "delete-song": "Delete Playlist User Song"
+}

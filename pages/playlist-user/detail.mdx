@@ -1,0 +1,69 @@
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+
+# Get Detail Playlist of User
+
+To get the data in the specified collection. If no parameters are passed, it lists all of them.
+Otherwise, it lists the documents in the collection matching the specified parameters:
+
+**Method :** <Badge variant="success">GET</Badge>
+
+**URL :** <Badge variant="dark">/api/my-playlist/detail?id=(id)</Badge>
+
+**Response :** <BadgeOutline variant="success">200 - OK</BadgeOutline>
+
+```json
+{
+  "playlist": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "name": "User Top 3",
+      "created_at": "2023-01-16T10:25:35.385349+00:00"
+    }
+  ],
+  "playlist_song": [
+    {
+      "song_id": 1,
+      "song_name": "Hari Yang Cerah",
+      "song_cover_url": "https://i.scdn.co/image/ab67616d00001e02076747ead143aa3cd8c1d2f0",
+      "song_preview_url": "https://p.scdn.co/mp3-preview/08bd5940bc2031c8c93306cccb32d5b9756fdc53",
+      "artist_id": 1,
+      "artist_name": "Noah",
+      "playlist_user_song_id": 1
+    },
+    {
+      "song_id": 2,
+      "song_name": "Bintang Di Surga",
+      "song_cover_url": "https://i.scdn.co/image/ab67616d00001e02af69d9e82cc973f608481610",
+      "song_preview_url": "https://p.scdn.co/mp3-preview/09474fc657c15038cb699afa4a52b4fac9383d62",
+      "artist_id": 1,
+      "artist_name": "Noah",
+      "playlist_user_song_id": 2
+    },
+    {
+      "song_id": 3,
+      "song_name": "Taman Langit",
+      "song_cover_url": "https://i.scdn.co/image/ab67616d0000b27324496b7707e9304c4ad76c5a",
+      "song_preview_url": "https://p.scdn.co/mp3-preview/f2909fb81ec28143e1dbf032a0e8a4fa5d5d1837",
+      "artist_id": 1,
+      "artist_name": "Noah",
+      "playlist_user_song_id": 3
+    }
+  ]
+}
+```
+
+**Response :** <BadgeOutline variant="warning">404 - Not Found</BadgeOutline>
+
+```json
+{
+  "message": "Id Playlist Required"
+}
+```
+
+**Response :** <BadgeOutline variant="danger">500 - Server Error</BadgeOutline>
+
+```json
+Internal Server Error
+```
