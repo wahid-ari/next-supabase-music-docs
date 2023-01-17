@@ -54,13 +54,13 @@ const config = {
       <meta name="description" content="MyMusic Docs" />
       <meta name="og:description" content="MyMusic Docs" />
       <meta name="og:title" content="MyMusic" />
-      <meta name="og:image" content="https://nextra.site/og.jpeg" />
+      <meta name="og:image" content="https://my-music-docs.vercel.app/og.png" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site:domain" content="nextra.site" />
       <meta name="twitter:site" content="nextra.site" />
       <meta name="twitter:url" content="https://nextra.site" />
-      <meta name="twitter:image" content="https://nextra.site/og.jpeg" />
+      <meta name="twitter:image" content="https://my-music-docs.vercel.app/og.png" />
 
       <meta name="apple-mobile-web-app-title" content="MyMusic" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
@@ -79,7 +79,7 @@ const config = {
   banner: {
     key: 'banner',
     text: (
-      <a href="https://nextra.site" target="_blank" rel="noreferrer">
+      <a href="https://my-music-docs.vercel.app/blog/mymusic" target="_blank" rel="noreferrer">
         🎉 MyMusic 1.0 is released. Read more →
       </a>
     )
