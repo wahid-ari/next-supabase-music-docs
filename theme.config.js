@@ -75,11 +75,11 @@ const config = {
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     </>
   ),
-  docsRepositoryBase: 'https://github.com/wahid-ari/next-supabase-music-docs',
+  docsRepositoryBase: 'https://github.com/wahid-ari/next-supabase-music-docs/tree/master/',
   banner: {
     key: 'banner',
     text: (
-      <a href="https://my-music-docs.vercel.app/blog/mymusic" target="_blank" rel="noreferrer">
+      <a href="https://my-music-docs.vercel.app/blog/mymusic">
         🎉 MyMusic 1.0 is released. Read more →
       </a>
     )

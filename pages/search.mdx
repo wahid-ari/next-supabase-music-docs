@@ -5,10 +5,12 @@ import CodeGroup from "@components/CodeGroup";
 
 # Search
 
-To get the data in the specified collection. If no parameters are passed, it lists all of them.
+Returns a collection of relevant data matching a specified query. If no parameters are passed, it thrown an error.
 Otherwise, it lists the documents in the collection matching the specified parameters:
 
 ### Search API Playground
+
+The API playground is an interactive environment to make requests and preview an API endpoint.
 
 <ApiPlayground method="GET" endpoint="search" param={true} paramName="q">
 	Tes endpoint `search` with `q` as param

@@ -24,7 +24,7 @@
     "display": "hidden"
   },
   "company": {
-    "title": "Company",
+    "title": "About",
     "type": "menu",
     "items": {
       "about": {
@@ -32,7 +32,7 @@
         "href": "/about"
       },
       "contact": {
-        "title": "Contact Us",
+        "title": "Contact",
         "href": "mailto:wahiid.ari@gmail.com"
       }
     }
