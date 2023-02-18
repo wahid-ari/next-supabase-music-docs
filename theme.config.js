@@ -57,21 +57,18 @@ const config = {
       <meta name="og:image" content="https://my-music-docs.vercel.app/og.png" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site:domain" content="nextra.site" />
-      <meta name="twitter:site" content="nextra.site" />
-      <meta name="twitter:url" content="https://nextra.site" />
+      <meta name="twitter:site:domain" content="my-music-docs.vercel.app" />
+      <meta name="twitter:site" content="my-music-docs.vercel.app" />
+      <meta name="twitter:url" content="https://my-music-docs.vercel.app" />
       <meta name="twitter:image" content="https://my-music-docs.vercel.app/og.png" />
 
       <meta name="apple-mobile-web-app-title" content="MyMusic" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
-
       <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
       <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     </>
   ),
@@ -101,7 +98,7 @@ const config = {
               target="_blank"
               rel="noopener noreferrer"
               title="vercel.com homepage"
-              href="https://vercel.com?utm_source=nextra.site"
+              href="https://vercel.com?utm_source=my-music-docs.vercel.app"
             >
               <span>Powered by</span>
               <svg height={20} viewBox="0 0 283 64" fill="none">
