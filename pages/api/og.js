@@ -47,6 +47,7 @@ export default async function handler(req) {
           </div>
 
           <h1
+            tw='pr-4'
             style={{
               fontSize: 64,
               margin: '0 0 40px -2px',
