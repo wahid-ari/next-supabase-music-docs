@@ -60,9 +60,9 @@ const config = {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="description" content="MyMusic Docs" />
-        <meta name="og:description" content="MyMusic Docs" />
-        <meta name="og:title" content="MyMusic" />
+        <meta name="og:title" content={`${title} - MyMusic API Docs`} />
+        <meta name="description" content={`${title} - Discover MyMusic API Docs`} />
+        <meta name="og:description" content={`${title} - Discover MyMusic API Docs`} />
         <meta name="og:image" content={socialCard} />
 
         <meta name="twitter:card" content="summary_large_image" />
