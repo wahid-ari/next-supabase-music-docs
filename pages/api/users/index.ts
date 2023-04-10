@@ -232,9 +232,11 @@ const users = [
   }
 ]
 
-export default function handler(req, res) {
+import { NextApiRequest, NextApiResponse } from "next";
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query
-  const filtered = users.filter(user => user.id == id)
+  const filtered = users.filter(user => user.id == Number(id))
 
   if (id == undefined) {
     res.status(200).send(JSON.stringify(users, null, 2));

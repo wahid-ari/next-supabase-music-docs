@@ -1,4 +1,9 @@
-export default function BadgeOutline({ variant, children }) {
+import { ReactNode } from "react";
+
+export default function BadgeOutline({ variant, children }: {
+  variant?: string;
+  children: ReactNode;
+}) {
 
   return (
     variant == "success" ?

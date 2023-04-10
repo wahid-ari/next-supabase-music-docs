@@ -231,16 +231,16 @@ const users = [
   }
 ]
 
-export default function handler(req, res) {
+import { NextApiRequest, NextApiResponse } from "next";
 
-  const { id } = req.query
-  const filtered = users.filter(user => user.id == id)
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+	const { id } = req.query;
+	const filtered = users.filter((user) => user.id == Number(id));
 
-  if (filtered.length > 0) {
-    res.status(200).send(JSON.stringify(filtered[0], null, 2));
-    // res.status(200).json(filtered[0])
-  }
-  else {
-    res.status(404).json({ id: id, error: "Not Found" })
-  }
+	if (filtered.length > 0) {
+		res.status(200).send(JSON.stringify(filtered[0], null, 2));
+		// res.status(200).json(filtered[0])
+	} else {
+		res.status(404).json({ id: id, error: "Not Found" });
+	}
 }

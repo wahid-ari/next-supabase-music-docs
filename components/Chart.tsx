@@ -78,6 +78,7 @@ export function BarChart() {
 }
 
 export function HorizontalBarChart() {
+  // @ts-ignore
   return <Bar options={optionHorizontalBar} data={data} />
 }
 
