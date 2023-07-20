@@ -57,58 +57,75 @@ export default function ApiPlayground({ method, endpoint, children, param = fals
   };
 
   return (
-    <div className="border dark:border-neutral-800 p-4 rounded-md mt-8">
+		<div className="border dark:border-neutral-800 p-4 rounded-md mt-8">
+			<div className={`flex items-center gap-4 ${param ? "-mb-2" : "mb-4"}`}>
+				{MethodBadge(methodUpperCase)}
+				<a
+					href={`${process.env.API_URL}/api/${endpoint}`}
+					target="_blank"
+					className="font-medium text-neutral-700 dark:text-neutral-200 m-0 hover:underline transition-all duration-200 focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-green-500 focus-visible:ring-offset-0"
+				>
+					/api/{endpoint}
+				</a>
+			</div>
 
-      <div className={`flex items-center gap-4 ${param ? "-mb-2" : "mb-4"}`}>
-        {MethodBadge(methodUpperCase)}
-        <a
-          href={`${process.env.API_URL}/api/${endpoint}`}
-          target="_blank"
-          className="font-medium text-neutral-700 dark:text-neutral-200 m-0 hover:underline transition-all duration-200">
-          /api/{endpoint}
-        </a>
-      </div>
+			{param ? (
+				<div className="-mb-2 mt-6">
+					<div className="border-b dark:border-b-neutral-800 mb-5">
+						<button className="pb-2 text-sm text-green-600 font-medium border-b-2 border-b-green-600 focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-green-500 focus-visible:ring-offset-0">
+							Query
+						</button>
+					</div>
+					<div className="flex flex-wrap gap-3 items-center">
+						<p className="font-medium text-neutral-700 dark:text-neutral-200 m-0">
+							{paramName}
+						</p>
+						<input
+							onChange={(e) => setValue(e.target.value)}
+							type="text"
+							className="bg-[#f7f7f7] border border-neutral-300 dark:border-neutral-700 dark:bg-[#111] py-0.5 px-2 rounded-md focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-green-500 focus-visible:ring-offset-0"
+						/>
+					</div>
+				</div>
+			) : null}
 
-      {param ?
-        <div className="-mb-2 mt-6">
-          <div className="border-b dark:border-b-neutral-800 mb-5">
-            <button className="pb-2 text-sm text-green-600 font-medium border-b-2 border-b-green-600">Query</button>
-          </div>
-          <div className="flex flex-wrap gap-3 items-center">
-            <p className="font-medium text-neutral-700 dark:text-neutral-200 m-0">{paramName}</p>
-            <input onChange={(e) => setValue(e.target.value)} type="text" className="bg-[#f7f7f7] border border-neutral-300 dark:border-neutral-700 dark:bg-[#111] py-0.5 px-2 rounded-md" />
-          </div>
-        </div>
-        : null
-      }
+			{children}
 
-      {children}
+			<button
+				onClick={handleFetch}
+				className={cn(
+					"flex items-center gap-2 text-sm font-medium px-2.5 py-1",
+					"transition-all duration-300 text-white rounded",
+					"focus-visible:!outline-none focus-visible:!ring focus-visible:!ring-green-500 focus-visible:ring-offset-0",
+					children !== undefined ? "mt-4" : "mt-8",
+					methodUpperCase == "GET" ? "bg-green-600 hover:bg-green-700" : "",
+					methodUpperCase == "POST" ? "bg-blue-600 hover:bg-blue-700" : "",
+					methodUpperCase == "PUT" ? "bg-orange-600 hover:bg-orange-700" : "",
+					methodUpperCase == "PATCH" ? "bg-yellow-500 hover:bg-yellow-600" : "",
+					methodUpperCase == "DELETE" ? "bg-red-600 hover:bg-red-700" : ""
+				)}
+			>
+				<svg
+					className="fill-white h-3"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 384 512"
+				>
+					<path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"></path>
+				</svg>
+				{loading ? "Sending Request..." : "Send Request"}
+			</button>
 
-      <button onClick={handleFetch} className={cn('flex items-center gap-2 text-sm font-medium px-2.5 py-1',
-        "transition-all duration-300 text-white rounded",
-        children !== undefined ? "mt-4" : "mt-8",
-        methodUpperCase == "GET" ? "bg-green-600 hover:bg-green-700" : "",
-        methodUpperCase == "POST" ? "bg-blue-600 hover:bg-blue-700" : "",
-        methodUpperCase == "PUT" ? "bg-orange-600 hover:bg-orange-700" : "",
-        methodUpperCase == "PATCH" ? "bg-yellow-500 hover:bg-yellow-600" : "",
-        methodUpperCase == "DELETE" ? "bg-red-600 hover:bg-red-700" : ""
-      )}>
-        <svg className="fill-white h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-          <path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"></path>
-        </svg>
-        {loading ? "Sending Request..." : "Send Request"}
-      </button>
-
-      {fetched ?
-        <div className="Code border-t dark:border-t-neutral-800 mt-5">
-          <pre className="pt-3">
-            <div dangerouslySetInnerHTML={{ __html: formatHighlight(data, colorOptions) }}>
-            </div>
-          </pre>
-        </div>
-        : null
-      }
-
-    </div>
-  )
+			{fetched ? (
+				<div className="Code border-t dark:border-t-neutral-800 mt-5">
+					<pre className="pt-3">
+						<div
+							dangerouslySetInnerHTML={{
+								__html: formatHighlight(data, colorOptions),
+							}}
+						></div>
+					</pre>
+				</div>
+			) : null}
+		</div>
+	);
 }

@@ -22,7 +22,7 @@ export function Author({ name, link }: { name?: string; link?: string }) {
 				key={name}
 				href={link}
 				target="_blank"
-				className="ml-1 mr-0.5 font-medium text-gray-800 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-500 transition-all duration-200"
+				className="ml-1 mr-0.5 font-medium text-gray-800 dark:text-gray-100 hover:text-green-500 dark:hover:text-green-500 transition-all duration-200"
 			>
 				{name}
 			</a>
